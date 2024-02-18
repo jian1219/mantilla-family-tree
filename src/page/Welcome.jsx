@@ -21,10 +21,10 @@ export default function Welcome() {
   }, []);
 
   return (
-    <div className='cp:h-screen bg-violet-700 flex justify-center text-white text-center pb-5 pt-2'>
+    <div className='h-screen bg-violet-700 flex justify-center text-white text-center pb-5 pt-2'>
       <div>
         <h1 className='text-sm cp:mt-5'>Mantilla FAM</h1>
-        <h2 className='text-4xl font-medium pt-[140px]'>WELCOME!</h2>
+        <h2 className='text-4xl font-medium pt-[100px]'>WELCOME!</h2>
         <div className='pt-6 relative'>
           {slides.map((slide, index) => (
             <div key={slide.id} style={{ display: index === currentSlide ? 'block' : 'none' }}>

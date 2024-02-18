@@ -39,9 +39,9 @@ export default function Home() {
     <div className='h-screen bg-violet-700 items-center text-white text-center'>
       <div>
         <h1 className='pt-6 text-sm font-medium'>Mantilla FAM</h1>
-        <p className='text-md mt-6'>No <span className='text-xl font-bold'>Domain Name </span> pa</p>
+        <p className='text-md mt-6'>No custom <span className='text-xl font-bold'>Domain Name </span> pa</p>
       </div>
-      <div className='mt-[300px]'>
+      <div className='mt-[170px]'>
         <h1>May lalabas na palaka in</h1>
         <div className="text-4xl">
           {timeLeft.days}d : {addLeadingZero(timeLeft.hours)}h : {addLeadingZero(timeLeft.minutes)}m : {addLeadingZero(timeLeft.seconds)}s
