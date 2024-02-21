@@ -24,7 +24,7 @@ export default function Welcome() {
     <div className='h-screen bg-violet-700 flex justify-center text-white text-center pb-5 pt-2'>
       <div>
         <h1 className='text-sm cp:mt-5'>Mantilla FAM</h1>
-        <h2 className='text-4xl font-medium pt-[100px]'>WELCOME!</h2>
+        <h2 className='text-3xl font-medium pt-[60px]'>WELCOME!</h2>
         <div className='pt-6 relative'>
           {slides.map((slide, index) => (
             <div key={slide.id} style={{ display: index === currentSlide ? 'block' : 'none' }}>
@@ -45,7 +45,7 @@ export default function Welcome() {
         </div>
         
         <Link to={'/home'}>
-            <div className='bg-violet-900 py-3 mt-[30px] hover:bg-violet-500 rounded-md'>
+            <div className='bg-violet-900 py-3 mt-[20px] hover:bg-violet-500 rounded-md'>
                 Continue
             </div>  
         </Link>
