@@ -60,15 +60,15 @@ const MembersInfo = () => {
   }
 
   return (
-    <div className=' h-screen  bg-violet-700 flex justify-center relative'>
-      <div className='bg-violet-800 w-screen px-5 pb-4 overflow-y-scroll scrollbar'>
+    <div className=' h-screen bg-violet-700 flex justify-center relative'>
+      <div className='bg-violet-800 tablet2:w-fit cp:w-screen tablet:w-screen px-5 pb-4 overflow-y-scroll scrollbar'>
         <Link to='/home'>
           <div className='absolute top-3 left-4 bg-violet-900 text-white px-5 py-1 rounded-md hover:bg-pink-700 font-semibold'>
             Back
           </div>
         </Link>
-        <div className='tablet2:flex items-center mt-6 text-white cp:mt-[60px]'>
-          <img src={member.profilePicture} alt="Profile Picture" className='w-64 h-64 object-cover rounded-lg cp:mx-auto' />
+        <div className='tablet2:flex items-center mt-6 text-white cp:mt-[60px] tablet:mt-[60px]'>
+          <img src={member.profilePicture} alt="Profile Picture" className='w-64 h-64 object-cover rounded-lg cp:mx-auto tablet:mx-auto' />
           <div className='cp:mt-5 tablet2:ml-4 px-5'>
             <h1><span className='font-semibold mr-2'>Name:</span>{member.name}</h1>
             <p><span className='font-semibold mr-2'>Age:</span> {member.age}</p>
