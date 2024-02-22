@@ -45,7 +45,7 @@ export default function Welcome() {
         </div>
         
         <Link to={'/home'}>
-            <div className='bg-violet-900 py-3 mt-[20px] hover:bg-violet-500 rounded-md'>
+            <div className='bg-violet-900 py-3 mt-[90px] cp:mt-[200px] hover:bg-violet-500 rounded-md'>
                 Continue
             </div>  
         </Link>

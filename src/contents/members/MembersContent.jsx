@@ -13,7 +13,7 @@ const MembersContent = () => {
   return (
     <div className='h-screen overflow-y-scroll scrollbar px-4 py-5'>
       <h1 className='text-3xl font-medium mt-5'>Members of Family</h1>
-      <div className='mt-9'>
+      <div className='mt-9 '>
         <h2 className='text-lg font-semibold'>The Anak</h2>
         <div className='mt-5'>
           <Generation1 />

@@ -22,6 +22,14 @@ export default function Home() {
     // Close the menu when 'Home' is clicked
     if (contentName === 'home') {
       setIsOpen(false);
+    } else if (contentName === 'albums') {
+      setIsOpen(false);
+    } else if (contentName === 'events') {
+      setIsOpen(false);
+    } else if (contentName === 'about') {
+      setIsOpen(false);
+    } else if (contentName === 'members') {
+      setIsOpen(false);
     }
   }
 
@@ -49,7 +57,7 @@ export default function Home() {
   };
 
   return (
-    <div className='h-screen bg-slate-900 items-center text-white text-center'>
+    <div className='h-full bg-violet-600 items-center text-white text-center'>
       <div className='flex justify-center'>
         <div className='cp:w-screen tablet:w-screen laptop:w-[1300px]'>
           <div className='tablet2:flex'>
@@ -74,7 +82,7 @@ export default function Home() {
 
             {/* Navigation CP and Tablet */}
 
-            <nav className='cp:block tablet2:hidden'>
+            <nav className='cp:block sticky top-0 tablet2:hidden'>
               <div className='px-4 py-2 bg-violet-700 ml-[2px] mr-[1px] border-b-[3px] border-violet-900 flex justify-between items-center'>
                 <div className='flex text-center items-center'>
                   <img src={logo} alt={logo} className='w-14 h-14 object-cover rounded-full'/>

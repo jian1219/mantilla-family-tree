@@ -1,0 +1,79 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { client } from '../../../lib/sanityClient';
+
+const BioInfo = () => {
+  const [member, setMember] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "person" && _id == $id]{
+          name,
+          age,
+          birthday,
+          address,
+          'profilePicture': profilePic.asset->url,
+          'firstImage': images[0].asset->url,
+          'images': images[].asset->url,
+          generation,
+          description
+        }`,
+        { id }
+      )
+      .then(data => {
+        if (data.length > 0) {
+          setMember(data[0]);
+        } else {
+          console.error('Person not found');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [id]);
+
+  if (!member) {
+    return <div className='bg-violet-700 flex justify-center h-screen text-white items-center'>loading...</div>;
+  }
+
+  if (!member.description && !member.firstImage) {
+    return <div className='bg-violet-700 flex justify-center h-screen text-white items-center'>No info</div>;
+  }
+
+  return (
+    <div className='tablet:w-screen laptop:w-[100px]'>
+      <div className='tablet2:flex laptop:bg-slate-900 laptop:w-[900px] laptop:grid items-center mt-6 text-white cp:mt-[60px] tablet:mt-[60px]'>
+        <div className='px-5'>
+          {member.firstImage && (
+            <img
+              src={member.firstImage}
+              alt="Profile Picture"
+              className='w-1/2 object-cover rounded-lg cp:float-right tablet:float-right tablet-Ad:w-[190px] laptop:float-none mx-2 cursor-pointer'
+              onClick={() => window.open(member.firstImage, '_blank')}
+            />
+          )}
+          {member.description && <p className='laptop:w-[500px]'>{member.description}</p>}
+        </div>
+      </div>
+
+      <div className='mx-5 mt-[100px] hidden'>
+        <p className='text-center text-xl pt-4 mb-3 font-bold text-white border-t-2 border-slate-900'>Say Cheese!</p>
+        <div className='grid tablet: tablet:grid-cols-2 tablet2:grid-cols-3 laptop:grid gap-1 px-2'>
+          {member.images.map(imageUrl => (
+            <img
+              onClick={() => window.open(imageUrl, '_blank')}
+              key={imageUrl}
+              src={imageUrl}
+              alt="Image"
+              className='cp:w-1/1 tablet:w-[220px]'
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BioInfo;

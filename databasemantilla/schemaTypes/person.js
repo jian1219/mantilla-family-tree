@@ -72,6 +72,12 @@ export default defineType({
       name: 'generation',
       title: 'Generation',
       type: 'number'
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      description: 'A brief description about the person.'
     }
   ]
 })
