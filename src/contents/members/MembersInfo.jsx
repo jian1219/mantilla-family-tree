@@ -5,6 +5,8 @@ import BioInfo from './membersInfoContents/BioInfo';
 import More from './membersInfoContents/More';
 import logo from '../../images/co1.jpg';
 
+import { icons } from '../../icons/Icons'
+
 const MembersInfo = () => {
   const [content, setContent] = useState('main'); // Default to 'main' content
 
@@ -31,16 +33,17 @@ const MembersInfo = () => {
             <p className='ml-2 text-xs text-white font-semibold w-12 '>Mantilla Fam </p>
           </div>
           <div>
-            <ul className='flex gap-1 text-white text-sm'>
-              <li className='bg-violet-800 my-1 py-2 rounded-sm cursor-pointer hover:bg-violet-900 px-2 ' onClick={() => setContent('main')}>Main</li>
-              <li className='bg-violet-800 my-1 py-2 rounded-sm cursor-pointer hover:bg-violet-900 px-2' onClick={() => setContent('bio')}>Bio</li>
-              <li className='bg-violet-800 my-1 py-2 rounded-sm cursor-pointer hover:bg-violet-900 px-2' onClick={() => setContent('more')}>More</li>
+            <ul className='flex items-center gap-1 text-white text-sm'>
+              <li className='my-1 py-1 rounded-sm cursor-pointer  px-2 ' onClick={() => setContent('main')}><icons.UserCircleIcon className="w-7 h-7" /></li>
+              <li className=' my-1 py-2 rounded-sm cursor-pointer  px-2' onClick={() => setContent('bio')}><icons.IdentificationIcon className='w-7 h-7' /></li>
+              <li className=' my-1 py-2 rounded-sm cursor-pointer  px-2' onClick={() => setContent('more')}><icons.DotsVerticalIcon className='w-7 h-7' /></li>
               <Link to='/home'>
                 <li className='bg-violet-800 my-1 py-2 rounded-sm cursor-pointer hover:bg-violet-900 px-3 font-extrabold'>
-                    >>
+                    <icons.ArrowRightIcon className='w-4 h-4' />
                 </li>
               </Link>
-              
+             
+            
             </ul>
           </div>
         </div>
